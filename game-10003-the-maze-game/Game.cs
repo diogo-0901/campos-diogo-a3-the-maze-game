@@ -16,8 +16,7 @@ namespace MohawkGame2D
         // Place your variables here:
         Texture2D titleScreenGraphic = Graphics.LoadTexture("Assets/titleScreen.png");
         Texture2D playButton = Graphics.LoadTexture("Assets/playButton.png");
-        Texture2D tempWin = Graphics.LoadTexture("Assets/winScreen.jpg");
-
+        winScreen winScreen = new winScreen();
         public static bool onCollide = false;
         public static int level = 0;
         mazeCursor Cursor = new mazeCursor(new Vector2(-1, -1), new Vector2(5, 5));
@@ -73,6 +72,8 @@ namespace MohawkGame2D
             Window.SetTitle("The Maze Game");
             Window.SetSize(800, 600);
             Window.TargetFPS = 120;
+
+            winScreen.Setup();
         }
 
         /// <summary>
@@ -129,13 +130,15 @@ namespace MohawkGame2D
                     levelThree[i].Update();
                 }
                 Cursor.Update(levelThree);
-                Audio.Play(Audio.LoadSound("Assets/winSound.mp3"));
+                Audio.Play(Audio.LoadSound("Assets/winSound.ogg"));
             }
 
             // Win Screen
             if (level == 5)
             {
-                Graphics.Draw(tempWin, 0, 0);
+                Draw.FillColor = Color.Black;
+                Draw.Rectangle(0, 0, 800, 600);
+                winScreen.Update();
             }
 
             // Restart
