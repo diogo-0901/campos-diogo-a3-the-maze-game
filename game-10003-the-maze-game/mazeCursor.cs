@@ -56,12 +56,12 @@ namespace MohawkGame2D
 
                 // Player collision boundaries
                 float playerTop = pos.Y - size.Y / 2;
-                float playerBottom = pos.Y + size.Y / 2;
+                float playerBottom = pos.Y + size.Y / 2 - 1;
                 float playerLeft = pos.X - size.X / 2;
-                float playerRight = pos.X + size.X / 2;
+                float playerRight = pos.X + size.X / 2 - 1;
 
                 // Checks if they touch each other
-                bool isColliding = playerRight > hitboxLeft && playerLeft < hitboxRight && playerBottom > hitboxTop && playerTop < hitboxBottom;
+                bool isColliding = playerRight >= hitboxLeft && playerLeft <= hitboxRight && playerBottom >= hitboxTop && playerTop <= hitboxBottom;
 
                 if (isColliding)
                 {
