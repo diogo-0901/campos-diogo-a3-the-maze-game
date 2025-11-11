@@ -11,15 +11,16 @@ namespace MohawkGame2D
     {
         public Vector2 pos;
         public Vector2 size;
-        public bool isBad;
+        public bool collideType;
 
         Color color;
 
-        public mazeHitbox(Vector2 pos, Vector2 size, bool isBad, Color color)
+        // Assigns options to edit position, size, whether it's a wall or goal, and colour
+        public mazeHitbox(Vector2 pos, Vector2 size, bool collideType, Color color)
         {
             this.pos = pos;
             this.size = size;
-            this.isBad = isBad;
+            this.collideType = collideType;
             this.color = color;
         }
 
