@@ -20,7 +20,7 @@ namespace MohawkGame2D
 
         public static bool onCollide = false;
         public static int level = 0;
-        mazeCursor Cursor = new mazeCursor(new Vector2(-1, -1), new Vector2(6, 6));
+        mazeCursor Cursor = new mazeCursor(new Vector2(-1, -1), new Vector2(5, 5));
         mazeHitbox[] levelOne = {
         new mazeHitbox(new Vector2(0, 0), new Vector2(250, 600), true, Color.Black),
         new mazeHitbox(new Vector2(250, 0), new Vector2(550, 50), true, Color.Black),
