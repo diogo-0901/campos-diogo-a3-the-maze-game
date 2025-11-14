@@ -125,11 +125,7 @@ namespace MohawkGame2D
             // PlayAudio
             if (level == 4 && onCollide == false)
             {
-                for (int i = 0; i < levelThree.Length; i++)
-                {
-                    levelThree[i].Update();
-                }
-                Cursor.Update(levelThree);
+                level++;
                 Audio.Play(Audio.LoadSound("Assets/winSound.ogg"));
             }
 
